@@ -25,6 +25,25 @@ public class HtmlRead {
             );
             String line;
             while ( (line = reader.readLine()) != null ) {
+                if(line.contains("href")) {
+
+                    int index = 0;
+                    int start = 0;
+                    int end = 0;
+                     start = line.indexOf("href=") +6;
+                    System.out.println(line);
+                     String line2 = line.substring(start);
+                    System.out.println(line2);
+                    if(line2.contains("\"")){
+                        end = line2.indexOf("\"");
+                        System.out.println(line2.substring(0,end));
+                    }
+                    else if (line2.contains("\'")){
+                        end = line2.indexOf("\'");
+                        System.out.println(line2.substring(0,end));
+                    }
+
+                }
                 
                 System.out.println(line);
             }
